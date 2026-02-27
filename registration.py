@@ -21,3 +21,4 @@ print(f"Cantidad: {quantity}")
 print(f"Subtotal: ${subtotal}")
 print(f"Descuento VIP: ${discount}")
 print(f"Total a pagar: ${total}\n") 
+total = subtotal - discount
