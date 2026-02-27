@@ -10,3 +10,15 @@ if vip.lower() == "si":
 else:    discount = 0
 
 total = subtotal - discount
+
+# Resumen de la venta
+
+print("\n############################\n")
+print("\nResumen de la venta:\n")
+print(f"Cliente: {name}")
+print(f"Precio unitario: ${price}")
+print(f"Cantidad: {quantity}")
+print(f"Subtotal: ${subtotal}")
+print(f"Descuento VIP: ${discount}")
+print(f"Total a pagar: ${total}\n") 
+total = subtotal - discount
