@@ -1,24 +1,67 @@
-name = str(input("Ingrese su nombre y apellido: "))
-price = float(input("Ingrese el precio unitario del producto: "))
-quantity = int(input("Ingrese la cantidad de productos: "))
-vip = str(input("Es cliente VIP? (Si/No): "))
+while True:
+    name = input("Ingrese su nombre y apellido: ").strip()
+
+    if name == "":
+        print("El nombre no puede estar vacío.")
+        continue
+
+    if any(char.isdigit() for char in name):
+        print("El nombre y apellido no puede tener números.")
+        continue
+    break
+
+while True:
+    try:
+        price = float(input("Ingrese el precio unitario del producto: "))
+
+        if price < 0:
+            print(
+                "El precio no puede ser negativo. Por favor, ingrese un valor válido."
+            )
+            continue
+        break
+
+    except ValueError:
+        print("Por favor, ingrese un número válido para el precio.")
+
+while True:
+    try:
+        quantity = int(input("Ingrese la cantidad de productos: "))
+
+        if quantity < 0:
+            print(
+                "La cantidad no puede ser negativa. Por favor, ingrese un valor válido."
+            )
+            continue
+        break
+    except ValueError:
+        print("Por favor, ingrese un número válido para la cantidad.")
+
+while True:
+    vip = input("Es cliente VIP? (Si/No): ").lower().strip()
+
+    if vip != "si" and vip != "no":
+        print("Por favor, ingrese 'Si' o 'No' para indicar si es cliente VIP.")
+        continue
+    break
 
 subtotal = price * quantity
 
-if vip.lower() == "si":
+if vip == "si":
     discount = subtotal * 0.1
-else:    discount = 0
+else:
+    discount = 0
 
 total = subtotal - discount
 
 # Resumen de la venta
 
 print("\n############################\n")
-print("\nResumen de la venta:\n")
-print(f"Cliente: {name}")
-print(f"Precio unitario: ${price}")
-print(f"Cantidad: {quantity}")
-print(f"Subtotal: ${subtotal}")
-print(f"Descuento VIP: ${discount}")
-print(f"Total a pagar: ${total}\n") 
-total = subtotal - discount
+print("Resumen de la venta:\n")
+print(f"Cliente: {name}\n")
+print(f"Precio unitario: ${price}\n")
+print(f"Cantidad: {quantity}\n")
+print(f"Subtotal: ${subtotal}\n")
+print(f"Descuento VIP: ${discount}\n")
+print(f"Total a pagar: ${total}")
+print("\n############################\n")
