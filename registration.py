@@ -1,14 +1,4 @@
-while True:
-    name = input("Ingrese su nombre y apellido: ").strip()
-
-    if name == "":
-        print("El nombre no puede estar vacío.")
-        continue
-
-    if any(char.isdigit() for char in name):
-        print("El nombre y apellido no puede tener números.")
-        continue
-    break
+name = input("Ingrese su nombre y apellido: ").strip()
 
 while True:
     try:
