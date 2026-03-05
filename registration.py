@@ -5,9 +5,7 @@ while True:
         price = float(input("Ingrese el precio unitario del producto: "))
 
         if price < 0:
-            print(
-                "El precio no puede ser negativo. Por favor, ingrese un valor válido."
-            )
+            print("El precio no puede ser negativo. Por favor, ingrese un valor válido.")
             continue
         break
 
@@ -19,11 +17,10 @@ while True:
         quantity = int(input("Ingrese la cantidad de productos: "))
 
         if quantity < 0:
-            print(
-                "La cantidad no puede ser negativa. Por favor, ingrese un valor válido."
-            )
+            print("La cantidad no puede ser negativa. Por favor, ingrese un valor válido.")
             continue
         break
+
     except ValueError:
         print("Por favor, ingrese un número válido para la cantidad.")
 
